@@ -34,6 +34,11 @@ public class App {
                 } else if (navigationChoice.equals("calculate volume")) {
                     for (Parcel oneParcel : allParcels) {
                         Float parcelVol = oneParcel.volume();
+                        System.out.println("----------------------");
+                        System.out.println("Package Height: " + oneParcel.parcelHeight);
+                        System.out.println("Package Length: " +oneParcel.parcelLength);
+                        System.out.println("Package Width: " +oneParcel.parcelWidth);
+                        System.out.println("Package Weight: " +oneParcel.parcelWeight);
                         System.out.println("Package volume: " + parcelVol);
                     }
                 } else if (navigationChoice.equals("calculate cost to ship")) {
@@ -41,6 +46,12 @@ public class App {
                         System.out.println("Distance: ");
                         float inputDistance = Float.parseFloat(bufferedReader.readLine());
                         double parcelCost = oneParcel.costToShip(inputDistance);
+                        System.out.println("----------------------");
+                        System.out.println("Package Height: " + oneParcel.parcelHeight);
+                        System.out.println("Package Length: " +oneParcel.parcelLength);
+                        System.out.println("Package Width: " +oneParcel.parcelWidth);
+                        System.out.println("Package Weight: " +oneParcel.parcelWeight);
+                        System.out.println("Distance: " + inputDistance);
                         System.out.println("Cost to Ship: " + parcelCost);
                     }
                 } else if (navigationChoice.equals("Exit")) {
