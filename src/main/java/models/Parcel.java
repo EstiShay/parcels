@@ -4,27 +4,27 @@ package models;
  * Created by Guest on 7/31/17.
  */
 public class Parcel {
-     public int parcelHeight;
-     public int parcelLength;
-     public int parcelWidth;
-     public int parcelWeight;
-     public int parcelVolume;
-     public float parcelCost;
-     public boolean parcelWrap;
+     public Float parcelHeight;
+     public Float parcelLength;
+     public Float parcelWidth;
+     public Float parcelWeight;
+//     public boolean parcelWrap;
 
-    public Parcel(int parcelHeight, int parcelLength, int parcelWidth, int parcelWeight) {
+    public Parcel(Float parcelHeight, Float parcelLength, Float parcelWidth, Float parcelWeight) {
 
         this.parcelHeight = parcelHeight;
         this.parcelLength = parcelLength;
         this.parcelWidth = parcelWidth;
         this.parcelWeight = parcelWeight;
-        this.parcelVolume = 0;
-        this.parcelCost = 0;
-        this.parcelWrap = false;
+
     }
 
-    public int volume(){
+    public Float volume(){
         return (parcelWidth * parcelLength * parcelHeight);
+    }
+
+    public double costToShip(Float distance) {
+       return ((this.parcelWeight * 0.1) + ((this.volume()) * 0.1) + (distance * 0.1) + 10);
     }
 
 }

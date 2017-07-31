@@ -22,19 +22,26 @@ public class App {
                 String navigationChoice = bufferedReader.readLine();
                 if (navigationChoice.equals("Add package")) {
                     System.out.println("Height: ");
-                    int inputHeight = Integer.parseInt(bufferedReader.readLine());
+                    float inputHeight = Float.parseFloat(bufferedReader.readLine());
                     System.out.println("Width: ");
-                    int inputWidth = Integer.parseInt(bufferedReader.readLine());
+                    float inputWidth = Float.parseFloat(bufferedReader.readLine());
                     System.out.println("Length: ");
-                    int inputLength = Integer.parseInt(bufferedReader.readLine());
+                    float inputLength = Float.parseFloat(bufferedReader.readLine());
                     System.out.println("Weight: ");
-                    int inputWeight = Integer.parseInt(bufferedReader.readLine());
+                    float inputWeight = Float.parseFloat(bufferedReader.readLine());
                     Parcel newParcel = new Parcel(inputHeight, inputWidth, inputLength, inputWeight);
                     allParcels.add(newParcel);
                 } else if (navigationChoice.equals("calculate volume")) {
                     for (Parcel oneParcel : allParcels) {
-                        int parcelVol = oneParcel.volume();
+                        Float parcelVol = oneParcel.volume();
                         System.out.println("Package volume: " + parcelVol);
+                    }
+                } else if (navigationChoice.equals("calculate cost to ship")) {
+                    for (Parcel oneParcel : allParcels) {
+                        System.out.println("Distance: ");
+                        float inputDistance = Float.parseFloat(bufferedReader.readLine());
+                        double parcelCost = oneParcel.costToShip(inputDistance);
+                        System.out.println("Cost to Ship: " + parcelCost);
                     }
                 } else if (navigationChoice.equals("Exit")) {
                     System.out.println("Goodbye!");
